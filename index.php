@@ -19,14 +19,14 @@ echo $felix;
 echo $mistigri->__toString();
 
 
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
-echo $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
+ $felix->walk();
 if ($felix->isTired()){
     $felix->rest();
 }
