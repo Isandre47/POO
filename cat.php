@@ -106,7 +106,9 @@ class Cat
      */
     public function setColor(String $color): Cat
     {
-        $this->color = $color;
+        if ($color == "noir" || $color == "blanc" || $color == "gris"){
+            $this->color = $color;
+        }
         return $this;
     }
 
@@ -124,8 +126,11 @@ class Cat
      */
     public function setFatigue(int $fatigue): Cat
     {
-        $this->fatigue = $fatigue;
-        return $this;
+        if ($fatigue <= self::FATIGUE_MAX){
+            $this->fatigue = $fatigue;
+        }return $this;
+
+
     }
 
     /**
@@ -159,6 +164,12 @@ class Cat
         }
     }
 
+    public function eat()
+    {
+        if ($this->getFatigue() < self::FATIGUE_MAX) {
+            $this->setFatigue($this->getFatigue() - self::FATIGUE_INCR);
+        }
+    }
     /**
      * Cat constructor.
      * @param $color
